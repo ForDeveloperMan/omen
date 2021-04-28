@@ -1,0 +1,63 @@
+html{
+	font-size: 15px;
+}
+
+body{
+	font-family: 'Gotham';
+	color: #000000;
+	line-height: 1.25;
+}
+
+a{
+	font-family: 'Gotham';
+}
+
+.container{
+	max-width: 1470px;
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+
+.header{
+	height: 15.6rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	overflow: hidden;
+	&__wrap{
+		padding: 4.466666666666667rem 0;
+	}
+	&__content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__logo{
+		max-width: 16.93333333333333rem;
+	}
+}
+
+.topPaddingHeader{
+	padding-top: 15.6rem;
+}
+
+.sec-first{
+	&__wrap{
+		padding: 25.93333333333333rem 0;
+	}
+	&__content{
+		margin-left: auto;
+		max-width: 48rem;
+	}
+	&__title{
+		margin-bottom: 1.133333333333333rem;
+	}
+	&__text{
+		max-width: 32.66666666666667rem;
+		margin-bottom: 3.133333333333333rem;
+	}
+}
