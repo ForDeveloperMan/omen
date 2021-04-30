@@ -21,11 +21,23 @@
 		font-weight: 900;
 		font-size: 3.666666666666667rem;
 	}
+	&_sec{
+		font-size: 2.133333333333333rem;
+		font-weight: bold;
+	}
 }
 
 .text-sec{
 	color: #000000;
 	font-size: 1.866666666666667rem;
+}
+
+.text-info{
+	font-weight: 300;
+	font-size: 1rem;
+	letter-spacing: 0.01em;
+	color: #000000;
+	line-height: 1.4;
 }
 
 .btn{
@@ -58,5 +70,112 @@
 	    -webkit-backdrop-filter: blur(0.5rem);
 	    backdrop-filter: blur(0.5rem);
 	    bottom: -0.7rem;
+	}
+}
+
+@-webkit-keyframes diamondShape {
+    0% {
+        background-position: 0 9%
+    }
+
+    50% {
+        background-position: 100% 92%
+    }
+
+    to {
+        background-position: 0 9%
+    }
+}
+
+@keyframes diamondShape {
+    0% {
+        background-position: 0 9%
+    }
+
+    50% {
+        background-position: 100% 92%
+    }
+
+    to {
+        background-position: 0 9%
+    }
+}
+
+.diamond-dec{
+	position: relative;
+	flex: none;
+	font-size: 0;
+	&::after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url('../img/dec/mask.png') no-repeat center / cover;
+		z-index: 10;
+	}
+	&::before{
+		content: '';
+		position: absolute;
+		z-index: 1;
+	    top: .1rem;
+	    right: .1rem;
+	    bottom: .1rem;
+	    left: .1rem;
+	    background: linear-gradient(90deg, #FF41E7 -0.31%, #FF32B1 9.8%, #FF1D66 23.96%, #FF0D2F 36.1%, #FF040D 45.2%, #FF0000 50.26%, #FF0A00 56.33%, #FF2500 65.43%, #FF5000 78.58%, #FF8C00 92.75%, #FFB000 100.84%);
+        background-size: 600% 600%;
+        animation: diamondShape 6s ease infinite;
+        background-position: 0 9%;
+	}
+}
+
+.info-el{
+	&__title{
+		cursor: pointer;
+		color: #000000;
+		font-size: 1.466666666666667rem;
+		font-weight: normal;
+		letter-spacing: 0.01em;
+		&:hover{
+			font-weight: 500;
+		}
+	}
+	&.is-active{
+		.info-el__title{
+			font-weight: 500;
+		}
+	}
+	&__body{
+		margin: 1.733333333333333rem 0;
+		position: relative;
+		display: none;
+	}
+	&__text{
+		padding: 0 1.8rem;
+	}
+	&__timer{
+		position: absolute;
+		height: 100%;
+		left: 2px;
+		background: #C6C6C6;
+		width: 1px;
+		span{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background: #1B1B1B;
+			border-radius: 1px;
+			width: 3px;
+			height: 25%;
+			display: block;
+		}
+	}
+}
+
+.block-info{
+	&__el{
+		margin-bottom: 26px;
 	}
 }
