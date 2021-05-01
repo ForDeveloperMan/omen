@@ -48,7 +48,16 @@ $('.block-info').each(function() {
 	$(this).find('.info-el').eq(0).find('.info-el__title').click();
 });
 
-
+$('.specifications-el__top').on('click', function() {
+	var wrap = $(this).closest('.specifications-el');
+	if ( wrap.hasClass('active') ) {
+		wrap.removeClass('active');
+		wrap.find('.specifications-el__body').slideUp(200);
+	}else{
+		wrap.addClass('active');
+		wrap.find('.specifications-el__body').slideDown(200);
+	}
+});
 
 
 
