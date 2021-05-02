@@ -1,3 +1,32 @@
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3)
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3)
+    }
+
+    50% {
+        opacity: 1
+    }
+}
+
+.zoomIn{
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn
+}
+
 .btn-menu{
 	display: flex;
 	align-items: center;
@@ -49,15 +78,23 @@
 	text-transform: uppercase;
 	font-size: 0.8666666666666667rem;
 	font-weight: bold;
-	padding: 1.133333333333333rem 3.866666666666667rem;
-	background: #1B1B1B;
-	border-radius: 1px;
 	position: relative;
 	cursor: pointer;
 	user-select: none;
+	transition: .2s;
+	top: 0;
+	&__text{
+		border-radius: 1px;
+		background: #1B1B1B;
+		position: relative;
+		z-index: 2;
+		padding: 1.133333333333333rem 3.866666666666667rem;
+	}
 	&_small{
 		font-size: 0.8666666666666667rem;
-		padding: 1.133333333333333rem 2.4rem;
+		.btn__text{
+			padding: 1.133333333333333rem 2.4rem;
+		}
 	}
 	&::after{
 		content: '';
@@ -74,6 +111,13 @@
 	    -webkit-backdrop-filter: blur(0.5rem);
 	    backdrop-filter: blur(0.5rem);
 	    bottom: -0.7rem;
+	    transition: .2s;
+	}
+	&:hover{
+	    top: -5px;
+	    &::after{
+	        background: linear-gradient(0deg, #FF41E7 -0.31%, #FF32B1 9.8%, #FF1D66 23.96%, #FF0D2F 36.1%, #FF040D 45.2%, #FF0000 50.26%, #FF0A00 56.33%, #FF2500 65.43%, #FF5000 78.58%, #FF8C00 92.75%, #FFB000 100.84%);
+	    }
 	}
 }
 
@@ -150,6 +194,11 @@
         background-size: 600% 600%;
         animation: diamondShape 6s ease infinite;
         background-position: 0 9%;
+	}
+	&_dark{
+		&::after{
+			background-image: url('../img/dec/mask_dark.png');
+		}
 	}
 }
 
@@ -350,8 +399,7 @@
 	width: 100%;
 	font-size: 0;
 	display: block;
-	&::after{
-		content: '';
+	&__dec{
 		position: absolute;
 		width: 22.93333333333333rem;
 		height: 3.466666666666667rem;
@@ -522,6 +570,9 @@
 		.btn-plus__el:last-child{
 			transform: translateY(-50%) translateX(-50%) rotate(-90deg);
 		}
+		.specifications-el__title{
+			font-weight: 500;
+		}
 	}
 }
 
@@ -549,7 +600,7 @@
 		content: '';
 		position: absolute;
 		box-shadow: 0px 4.8rem 2rem 3.333333333333333rem rgba(0, 0, 0, 0.5);
-		filter: blur(20px);
+		filter: blur(1.333333333333333rem);
 		display: block;
 		z-index: 1;
 		height: 30%;
@@ -558,3 +609,94 @@
 		z-index: 10;
 	}
 }
+
+.info-dec{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(90deg, #FF55E1 -0.72%, #FF0000 50.28%, #FBB216 99.28%);
+	color: #FFFFFF;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.8666666666666667rem;
+	height: 2.8rem;
+	padding: 0.6666666666666667rem 3.066666666666667rem;
+	position: relative;
+	&__dec{
+		position: absolute;
+        background: #202020;
+		width: 2.333333333333333rem;
+		height: 2.333333333333333rem;
+		display: block;
+		transform: rotate(45deg);
+		&:nth-child(1){
+	        top: -1.266666666666667rem;
+    		left: -1.133333333333333rem;
+		}
+		&:nth-child(2){
+		    bottom: -1.2rem;
+    		left: -1.066666666666667rem;
+		}
+		&:nth-child(3){
+	        top: -1.266666666666667rem;
+    		right: -1.133333333333333rem;
+		}
+		&:nth-child(4){
+		    bottom: -1.2rem;
+    		right: -1.066666666666667rem;
+		}
+	}
+}
+
+.block-buy{
+	display: flex;
+	justify-content: center;
+	&__el{
+		display: block;
+		font-size: 0;
+		margin-right: 5.266666666666667rem;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+
+.social-el{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.333333333333333rem;
+	height: 3.333333333333333rem;
+	position: relative;
+	font-size: 0;
+	&::after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 3.333333333333333rem;
+		height: 3.333333333333333rem;
+		transform: rotate(45deg);
+		border: 1px solid #FFFFFF;
+	}
+	&__icon{
+		flex: none;
+		position: relative;
+		z-index: 1;
+		width: 1.666666666666667rem;
+		object-fit: scale-down;
+	}
+}
+
+.block-socials{
+	display: inline-flex;
+	align-items: center;
+	&__el{
+		margin-right: 4.2rem;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+
