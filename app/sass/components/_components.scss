@@ -114,7 +114,7 @@
 	    transition: .2s;
 	}
 	&:hover{
-	    top: -5px;
+	    top: -0.3rem;
 	    &::after{
 	        background: linear-gradient(0deg, #FF41E7 -0.31%, #FF32B1 9.8%, #FF1D66 23.96%, #FF0D2F 36.1%, #FF040D 45.2%, #FF0000 50.26%, #FF0A00 56.33%, #FF2500 65.43%, #FF5000 78.58%, #FF8C00 92.75%, #FFB000 100.84%);
 	    }
@@ -291,6 +291,10 @@
 		font-size: 1.466666666666667rem;
 		white-space: nowrap;
 		margin-left: 4.4rem;
+		&-count{
+			display: inline-block;
+			min-width: 0.6993333333333333rem;
+		}
 	}
 	&__arrows{
 		display: flex;
@@ -341,6 +345,7 @@
 		pointer-events: none;
 		max-width: none;
 		width: 48rem;
+		user-select: none;
 	}
 	&__dec{
 		position: absolute;
@@ -350,11 +355,13 @@
 	    left: -1.933333333333333rem;
 	    width: 44rem;
 	    pointer-events: none;
+	    user-select: none;
 	}
 	&__img{
 		position: relative;
 		z-index: 10;
 		width: 40.06666666666667rem;
+		user-select: none;
 	}
 	&__right{
 		max-width: 24rem;
@@ -607,6 +614,7 @@
 	}
 	&__slide{
 		z-index: 10;
+		object-fit: contain;
 	}
 }
 

@@ -1,6 +1,6 @@
 html{
-	font-size: .78vw;
-	// font-size: 15px;
+	// font-size: .78vw;
+	font-size: 15px;
 	// overflow-x: hidden;
 }
 
@@ -63,6 +63,7 @@ a{
 		position: absolute;
 		pointer-events: none;
 		z-index: 5;
+		user-select: none;
 	}
 	&__notebook{
 	    top: 7.5rem;
@@ -137,6 +138,7 @@ a{
 		position: absolute;
 		pointer-events: none;
 		z-index: 5;
+		user-select: none;
 	}
 	&__rhombus{
 		z-index: 1;
@@ -291,6 +293,7 @@ a{
 		margin-bottom: 10rem;
 	}
 	&__slides{
+		background-color: #fff;
 		&-top{
 			display: flex;
 			align-items: flex-start;
@@ -300,8 +303,9 @@ a{
 			color: #000000;
 			letter-spacing: 0.01em;
 			font-size: 1.466666666666667rem;
-			max-width: 24rem;
 			margin-right: 7.133333333333333rem;
+			min-width: 12.2rem;
+			max-width: 12.2rem;
 		}
 		.info-slides{
 			padding-top: 0.5333333333333333rem;
@@ -360,6 +364,7 @@ a{
 		height: 100%;
 		background: #202020;
 		z-index: -1;
+		user-select: none;
 	}
 	&__rtx{
 		position: absolute;
@@ -368,6 +373,7 @@ a{
 		pointer-events: none;
 		z-index: 1;
 		width: 9.866666666666667rem;
+		user-select: none;
 	}
 	&__notebook{
 		position: absolute;
@@ -375,6 +381,7 @@ a{
     	right: -4.533333333333333rem;
 		z-index: 1;
 		width: 62.13333333333333rem;
+		user-select: none;
 	}
 	&__wrap{
 		padding: 5.333333333333333rem 0;
@@ -395,6 +402,7 @@ a{
 		z-index: 1;
 		transform: rotate(-3deg);
 		pointer-events: none;
+		user-select: none;
 	}
 	&__title{
 		margin-bottom: 3.666666666666667rem;
