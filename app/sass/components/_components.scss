@@ -22,6 +22,14 @@
     }
 }
 
+sup{
+    top: -.5em;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
 .zoomIn{
     -webkit-animation-name: zoomIn;
     animation-name: zoomIn
@@ -59,6 +67,12 @@
 .text-sec{
 	color: #000000;
 	font-size: 1.866666666666667rem;
+}
+
+.text-med{
+	letter-spacing: 0.01em;
+	color: #000000;
+	font-size: 22px;
 }
 
 .text-info{
@@ -172,24 +186,28 @@
 	position: relative;
 	flex: none;
 	font-size: 0;
-	&::after{
+	opacity: 0;
+	transition: .2s;
+	&__mask{
 		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: url('../img/dec/mask.png') no-repeat center / cover;
 		z-index: 10;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
 	}
 	&::before{
 		content: '';
 		position: absolute;
 		z-index: 1;
-	    top: .1rem;
-	    right: .1rem;
-	    bottom: .1rem;
-	    left: .1rem;
+	    top: 2px;
+	    right: 2px;
+	    bottom: 2px;
+	    left: 2px;
 	    background: linear-gradient(90deg, #FF41E7 -0.31%, #FF32B1 9.8%, #FF1D66 23.96%, #FF0D2F 36.1%, #FF040D 45.2%, #FF0000 50.26%, #FF0A00 56.33%, #FF2500 65.43%, #FF5000 78.58%, #FF8C00 92.75%, #FFB000 100.84%);
         background-size: 600% 600%;
         animation: diamondShape 6s ease infinite;
@@ -206,24 +224,28 @@
 	position: relative;
 	flex: none;
 	font-size: 0;
-	&::after{
+	opacity: 0;
+	transition: .2s;
+	&__mask{
 		content: '';
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: url('../img/dec/mask_2.png') no-repeat center / cover;
 		z-index: 10;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
 	}
 	&::before{
 		content: '';
 		position: absolute;
 		z-index: 1;
-	    top: .1rem;
-	    right: .1rem;
-	    bottom: .1rem;
-	    left: .1rem;
+	    top: 2px;
+	    right: 2px;
+	    bottom: 2px;
+	    left: 2px;
 	    background: linear-gradient(90deg, #FF41E7 -0.31%, #FF32B1 9.8%, #FF1D66 23.96%, #FF0D2F 36.1%, #FF040D 45.2%, #FF0000 50.26%, #FF0A00 56.33%, #FF2500 65.43%, #FF5000 78.58%, #FF8C00 92.75%, #FFB000 100.84%);
         background-size: 600% 600%;
         animation: diamondShape 6s ease infinite;
@@ -368,6 +390,11 @@
 		width: 100%;
 		&-title{
 			margin-bottom: 2.733333333333333rem;
+		}
+	}
+	&__body{
+		&-mob{
+			display: none;
 		}
 	}
 	&__title{
@@ -708,3 +735,223 @@
 	}
 }
 
+@keyframes animOne{
+	0%{
+	    width: 12.23%;
+	}
+	50%{
+		width: 20%;
+	}
+	100%{
+		width: 12.23%;
+	}
+}
+@keyframes animTwo{
+	0%{
+	    height: 14.585%;
+	}
+	50%{
+	    height: 25%;
+	}
+	100%{
+	    height: 14.585%;
+	}
+}
+@keyframes rotate{
+	0%{
+	    transform: rotate(0deg);
+	}
+	50%{
+	}
+	100%{
+	    transform: rotate(360deg);
+	    // transform: rotate(0deg);
+	}
+}
+
+.note-anim{
+	position: relative;
+	&__main{
+		width: 100%;
+	}
+	&__one{
+		position: absolute;
+		top: 27%;
+    	right: 90%;
+		width: 12.23%;
+		height: 20.5%;
+		animation: animOne 2s reverse infinite;
+	}
+	&__two{
+		position: absolute;
+		bottom: 91%;
+		left: 66%;
+		width: 24.656%;
+		height: 14.585%;
+		animation: animTwo 2s reverse infinite;
+	}
+	&__tree{
+		position: absolute;
+		bottom: 90%;
+		left: 7%;
+		width: 22.8%;
+		animation: animTwo 2s reverse infinite;
+	}
+	&__four{
+		position: absolute;
+		top: 17%;
+		left: 5%;
+		width: 27%;
+		animation: rotate 2s linear reverse infinite;
+	}
+	&__five{
+		position: absolute;
+		top: 16%;
+		left: 64%;
+		width: 27%;
+		animation: rotate 2s linear reverse infinite;
+	}
+}
+
+
+.center{
+	text-align: center;
+}
+
+.article-block{
+	h4{
+		margin-bottom: 47px;
+	}
+	ul{
+		margin-bottom: 52px;
+	}
+	ul{
+		margin-left: 36px;
+		li{
+			list-style-type: initial;
+			margin-bottom: 8px;
+		}
+	}
+	a{
+		font-family: 'Gotham';
+		color: #1184EF;
+		font-weight: 300;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	p{
+		margin-bottom: 29px;
+	}
+	img{
+		display: inline-block;
+		margin-bottom: 79px;
+	}
+}
+
+.table-frol{
+	width: 100%;
+	background: #FFFFFF;
+	&__title{
+		color: #000000;
+		letter-spacing: 0.01em;
+		font-size: 18px;
+		&_bold{
+			font-weight: 500;
+		}
+	}
+	&__tr{
+		.table-frol__cell:first-child{
+			background: #F4F4F4;
+		}
+		&_main{
+			background: #1B1B1B;
+			.table-frol__title{
+				text-align: center;
+				color: #FFFFFF;
+			}
+			.table-frol__cell{
+				background: transparent !important;
+				border: 0;
+				&-body{
+					border: 1px solid #1B1B1B;
+					justify-content: center;
+				}
+				&:first-child{
+					.table-frol__cell-body{
+						justify-content: flex-start;
+					}
+				}
+			}
+		}
+		&_one{
+			.table-frol__cell{
+				&-body{
+					padding-right: 139px;
+					justify-content: center;
+				}
+			}
+		}
+	}
+	&__cell{
+		vertical-align: middle;
+		padding: 0;
+		border: 1px solid #D4D4D4;
+		&_bg{
+			background: #F4F4F4;
+		}
+		&-body{
+			// min-width: 358px;
+			min-height: 58px;
+			display: flex;
+			align-items: center;
+			padding: 17.5px 20px;
+		}
+		&:first-child{
+			max-width: 308px;
+			.table-frol__cell-body{
+			}
+		}
+	}
+	&__text{
+		font-weight: 300;
+		font-size: 15px;
+		letter-spacing: 0.01em;
+		color: #000000;
+		line-height: 1.3;
+	}
+	&_center{
+		.table-frol__tr{
+			.table-frol__cell-body{
+				justify-content: center;
+			}
+			.table-frol__cell{
+				&:first-child{
+					.table-frol__cell-body{
+						justify-content: flex-start;
+					}
+				}
+			}
+		}
+	}
+}
+
+.userBlock{
+	display: inline-flex;
+	align-items: center;
+	&__img{
+		display: block;
+		width: 75px;
+		height: 75px;
+		object-fit: contain;
+		border-radius: 100%;
+		margin-right: 28px;
+		flex: none;
+	}
+	&__text{
+		font-family: 'Gotham';
+		color: #000000;
+		letter-spacing: 0.01em;
+		font-size: 22px;
+	}
+}

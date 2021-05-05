@@ -14,6 +14,9 @@ body{
 
 .wrapper{
 	overflow: hidden;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 a{
@@ -261,9 +264,8 @@ a{
 		&-body{
 			max-width: 36rem;
 			width: 100%;
-			position: relative;
+			position: static;
 			z-index: 10;
-			position: relative;
 		}
 	}
 	&__dec{
@@ -337,6 +339,7 @@ a{
 	&__content{
 		display: flex;
 		justify-content: space-between;
+		align-items: flex-start;
 	}
 	&__left{
 		flex: none;
@@ -348,12 +351,35 @@ a{
 	}
 	&__title{
 		margin-bottom: 5.133333333333333rem;
+		&-mob{
+			display: none;
+		}
 	}
 }
 
 .sec-infovideo{
 	min-height: 42rem;
 	position: relative;
+	&__video{
+		position: absolute;
+		top: 0;
+		right: 3%;
+		z-index: 1;
+		height: 100%;
+		overflow: hidden;
+		&-tag{
+			height: 100%;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background: linear-gradient(90deg, #202020 -0.1%, rgba(32, 32, 32, 0) 50%);
+		}
+	}
 	&__bg{
 		content: '';
 		position: absolute;
@@ -365,6 +391,10 @@ a{
 		background: #202020;
 		z-index: -1;
 		user-select: none;
+	}
+	.container{
+		position: relative;
+		z-index: 10;
 	}
 	&__rtx{
 		position: absolute;
@@ -453,6 +483,7 @@ a{
 }
 
 .footer{
+	margin-top: auto;
 	background: #1B1B1B;
 	text-align: center;
 	position: relative;
@@ -462,7 +493,7 @@ a{
 		height: 35.33333333333333rem;
 	    position: absolute;
 		z-index: 1;
-    	top: -25.333333333333333rem;
+    	top: -18.333333rem;
     	left: 10.66666666666667rem;
     	pointer-events: none;
 	}
@@ -488,7 +519,66 @@ a{
 	&__logo{
 		position: absolute;
 	    top: -1.866666666666667rem;
-    	right: -30.3333333333333333rem;
+    	right: -20.333333rem;
     	width: 6.8rem;
+	}
+}
+
+.sec-article{
+	&__container{
+		max-width: 1080px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&__wrap{
+		padding: 10px 0;
+	}
+	&__title{
+		max-width: 800px;
+		margin-bottom: 46px;
+	}
+}
+
+.sec-configuration{
+	padding: 20px 0;
+	padding-bottom: 0;
+	margin-bottom: 60px;
+	&_margin{
+		margin-bottom: 42px;
+	}
+	&__top{
+		margin-bottom: 50px;
+	}
+	&__wrap{
+		background: #F4F4F4;
+	}
+	&__content{
+		padding: 64px 0;
+		padding-bottom: 50px;
+	}
+	&__title{
+		margin-bottom: 35px;
+	}
+}
+
+.sec-conclusions{
+	&__wrap{
+		padding: 38px 0;
+		padding-bottom: 74px;
+	}
+	&__title{
+		margin-bottom: 48px;
+	}
+	&__bottom{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 96px;
+		&-text{
+			font-family: 'Gotham';
+			font-size: 22px;
+			letter-spacing: 0.01em;
+			color: #000000;
+		}
 	}
 }
