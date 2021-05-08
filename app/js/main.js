@@ -67,8 +67,8 @@ $('.specifications-el__top').on('click', function() {
 });
 
 if ( $(window).width() <= 600 ) {
-	$('.sec-design__video').removeClass('slideInLeft');
-	$('.sec-command__notebook').removeClass('slideInRight');
+	$('.sec-design__video').removeClass('fadeInLeft');
+	$('.sec-command__notebook').removeClass('fadeInRight');
 	$('.sec-design__video, .sec-command__notebook').addClass('fadeIn');
 	$('.sec-infovideo [data-wow-delay="3s"]').attr('data-wow-delay', '500ms');
 }
@@ -85,6 +85,9 @@ var wow = new WOW({
 	callback:     function(box) {
 		let countTime = $(box).data('wow-delay');
 		let countTimeDuration = $(box).data('wow-duration');
+		if ( $(box).closest('.sec-buy').length ) {
+			return false;
+		}
 		if ( countTime === '1s' ) {
 			countTime = 1000;
 		}
@@ -105,7 +108,17 @@ var wow = new WOW({
 		}
 		else if ( countTime === '500ms' ) {
 			countTime = 500;
-		}else{
+		}
+		else if ( countTime === '600ms' ) {
+			countTime = 600;
+		}
+		else if ( countTime === '200ms' ) {
+			countTime = 200;
+		}
+		else if ( countTime === '100ms' ) {
+			countTime = 100;
+		}
+		else{
 			countTime = 0;
 		}
 		if ( countTimeDuration === '1s' ) {
@@ -210,13 +223,13 @@ function setAnimReviw() {
 	$(wrap).find('.review-block__title, .review-block__body, .review-block__right, .review-block__line, .review-block__dec, .review-block__img, .sec-review__dec').addClass('animated');
 
 	$(wrap).find('.review-block__title, .review-block__body').css({
-		'animation-name': 'slideInLeft',
+		'animation-name': 'fadeInLeft',
 		'visibility': 'visible',
 		'animation-duration': '1s',
 		'animation-iteration-count': '1',
 	});
 	$(wrap).find('.review-block__right').css({
-		'animation-name': 'slideInRight',
+		'animation-name': 'fadeInRight',
 		'visibility': 'visible',
 		'animation-duration': '1s',
 		'animation-iteration-count': '1',
@@ -230,29 +243,29 @@ function setAnimReviw() {
 	$(wrap).find('.review-block__line').css({
 		'animation-name': 'fadeIn',
 		'visibility': 'visible',
-		'animation-duration': '500ms',
-		'animation-delay': 	"1s",
+		'animation-duration': '1s',
+		'animation-delay': 	"200ms",
 		'animation-iteration-count': '1',
 	});
 	$(wrap).find('.review-block__dec').css({
 		'animation-name': 'fadeIn',
 		'visibility': 'visible',
-		'animation-duration': '500ms',
-		'animation-delay': 	"1s",
+		'animation-duration': '1s',
+		'animation-delay': 	"200ms",
 		'animation-iteration-count': '1',
 	});
 	$(wrap).find('.review-block__img').css({
-		'animation-name': 'slideInDown',
+		'animation-name': 'fadeInDown',
 		'visibility': 'visible',
-		'animation-delay': 	"1s",
-		'animation-duration': '500ms',
+		'animation-delay': 	"200ms",
+		'animation-duration': '1s',
 		'animation-iteration-count': '1',
 	});
 	$('.sec-review__dec').css({
-		'animation-name': 'slideInRight',
+		'animation-name': 'fadeInRight',
 		'visibility': 'visible',
 		'animation-delay': 	"0s",
-		'animation-duration': '1500ms',
+		'animation-duration': '1200ms',
 		'animation-iteration-count': '1',
 	});
 
@@ -266,7 +279,7 @@ function setAnimReviw() {
 		});
 		$(wrap).find('.review-block__title, .review-block__body, .review-block__right').removeClass('animated');
 
-		setTimeout(elseStart, 500);
+		setTimeout(elseStart, 200);
 		function elseStart() {
 			$(wrap).find('.review-block__line, .review-block__dec, .review-block__img').css({
 				'animation-name': 'none',
@@ -292,7 +305,7 @@ $('.sec-specifications__btn').on('click', function() {
 	if ( $(this).hasClass('active') ) {
 		$(this).removeClass('active');
 		$(this).text('Все спецификации');
-		wrap.find('.block-specifications__el.showed').fadeOut(200);
+		wrap.find('.block-specifications__el.showed').slideUp(200);
 	}else{
 		$(this).addClass('active');
 		wrap.find('.block-specifications__el:nth-child(n+7)').fadeIn(200);
@@ -364,13 +377,13 @@ function setAnim() {
 	$(wrap).find('.block-videoreview__left, .video-block, .block-videoreview__right-dec, .video-block__dec').addClass('animated');
 
 	$(wrap).find('.block-videoreview__left').css({
-		'animation-name': 'slideInLeft',
+		'animation-name': 'fadeInLeft',
 		'visibility': 'visible',
 		'animation-duration': '1s',
 		'animation-iteration-count': '1',
 	});
 	$(wrap).find('.video-block').css({
-		'animation-name': 'slideInRight',
+		'animation-name': 'fadeInRight',
 		'visibility': 'visible',
 		'animation-duration': '1s',
 		'animation-iteration-count': '1',
@@ -466,7 +479,7 @@ function setAnimCommand() {
 	var wrap = $('.sec-command__content');
 	$(wrap).find('.sec-command__slides-title, .sec-command__slides-text').addClass('animated');
 	$(wrap).find('.sec-command__slides-title, .sec-command__slides-text').css({
-		'animation-name': 'slideInLeft',
+		'animation-name': 'fadeInLeft',
 		'visibility': 'visible',
 		'animation-duration': '500ms',
 		'animation-iteration-count': '1',

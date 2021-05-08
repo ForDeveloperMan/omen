@@ -1040,8 +1040,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px); }
+    -webkit-transform: translateY(-300px);
+    transform: translateY(-300px); }
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -1050,9 +1050,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(-20px);
-    -ms-transform: translateY(-20px);
-    transform: translateY(-20px); }
+    -webkit-transform: translateY(-300px);
+    -ms-transform: translateY(-300px);
+    transform: translateY(-300px); }
   100% {
     opacity: 1;
     -webkit-transform: translateY(0);
@@ -1092,8 +1092,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @-webkit-keyframes fadeInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-20px);
-    transform: translateX(-20px); }
+    -webkit-transform: translateX(-300px);
+    transform: translateX(-300px); }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -1102,9 +1102,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(-20px);
-    -ms-transform: translateX(-20px);
-    transform: translateX(-20px); }
+    -webkit-transform: translateX(-300px);
+    -ms-transform: translateX(-300px);
+    transform: translateX(-300px); }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -1144,8 +1144,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(20px);
-    transform: translateX(20px); }
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px); }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -1154,9 +1154,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px); }
+    -webkit-transform: translateX(300px);
+    -ms-transform: translateX(300px);
+    transform: translateX(300px); }
   100% {
     opacity: 1;
     -webkit-transform: translateX(0);
@@ -3196,6 +3196,14 @@ sup {
   color: #000000;
   line-height: 1.4; }
 
+@keyframes btnAnim {
+  0% {
+    background-position: 0 9%; }
+  50% {
+    background-position: 100% 92%; }
+  to {
+    background-position: 0 9%; } }
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -3222,6 +3230,7 @@ sup {
       padding: 1.133333333333333rem 2.4rem; }
   .btn::after {
     content: '';
+    pointer-events: none;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -3235,9 +3244,19 @@ sup {
     -webkit-backdrop-filter: blur(0.5rem);
     backdrop-filter: blur(0.5rem);
     bottom: -0.7rem;
+    background-size: 600% 600%;
+    animation: btnAnim 6s ease infinite;
     transition: .2s; }
+  .btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 128%;
+    z-index: 10; }
   .btn:hover {
-    top: -0.3rem; }
+    transform: translateY(-0.3rem); }
     .btn:hover::after {
       background: linear-gradient(0deg, #FF41E7 -0.31%, #FF32B1 9.8%, #FF1D66 23.96%, #FF0D2F 36.1%, #FF040D 45.2%, #FF0000 50.26%, #FF0A00 56.33%, #FF2500 65.43%, #FF5000 78.58%, #FF8C00 92.75%, #FFB000 100.84%); }
 
@@ -3680,13 +3699,17 @@ sup {
 
 .block-buy {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: center; }
   .block-buy__el {
     display: block;
     font-size: 0;
-    margin-right: 5.266666666666667rem; }
+    margin-right: 5.266666666666667rem;
+    transition: .2s; }
     .block-buy__el:last-child {
       margin-right: 0; }
+    .block-buy__el:hover {
+      transform: scale(1.1); }
 
 .social-el {
   display: inline-flex;
@@ -3756,14 +3779,14 @@ sup {
     animation: animOne 2s reverse infinite; }
   .note-anim__two {
     position: absolute;
-    bottom: 91%;
+    bottom: 89%;
     left: 66%;
     width: 24.656%;
     height: 14.585%;
     animation: animTwo 2s reverse infinite; }
   .note-anim__tree {
     position: absolute;
-    bottom: 90%;
+    bottom: 91%;
     left: 7%;
     width: 22.8%;
     animation: animTwo 2s reverse infinite; }
@@ -4115,7 +4138,8 @@ a {
   margin-bottom: 10rem; }
 
 .sec-command__slides {
-  background-color: #fff; }
+  background-color: #fff;
+  min-height: 300px; }
   .sec-command__slides-top {
     display: flex;
     align-items: flex-start;
@@ -4385,7 +4409,9 @@ a {
     width: 30rem;
     height: 30rem; }
   .sec-technology__wrap {
-    padding-top: 10rem; } }
+    padding-top: 10rem; }
+  .sec-command__slides {
+    min-height: 230px; } }
 
 @media screen and (max-width: 1300px) {
   html {

@@ -83,6 +83,20 @@ sup{
 	line-height: 1.4;
 }
 
+@keyframes btnAnim{
+	0% {
+        background-position: 0 9%
+    }
+
+    50% {
+        background-position: 100% 92%
+    }
+
+    to {
+        background-position: 0 9%
+    }
+}
+
 .btn{
 	display: inline-flex;
 	align-items: center;
@@ -112,6 +126,7 @@ sup{
 	}
 	&::after{
 		content: '';
+		pointer-events: none;
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
@@ -125,10 +140,21 @@ sup{
 	    -webkit-backdrop-filter: blur(0.5rem);
 	    backdrop-filter: blur(0.5rem);
 	    bottom: -0.7rem;
+	    background-size: 600% 600%;
+	    animation: btnAnim 6s ease infinite;
 	    transition: .2s;
 	}
+	&:before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 128%;
+		z-index: 10;
+	}
 	&:hover{
-	    top: -0.3rem;
+	    transform: translateY(-0.3rem);
 	    &::after{
 	        background: linear-gradient(0deg, #FF41E7 -0.31%, #FF32B1 9.8%, #FF1D66 23.96%, #FF0D2F 36.1%, #FF040D 45.2%, #FF0000 50.26%, #FF0A00 56.33%, #FF2500 65.43%, #FF5000 78.58%, #FF8C00 92.75%, #FFB000 100.84%);
 	    }
@@ -687,12 +713,17 @@ sup{
 .block-buy{
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	&__el{
 		display: block;
 		font-size: 0;
 		margin-right: 5.266666666666667rem;
+		transition: .2s;
 		&:last-child{
 			margin-right: 0;
+		}
+		&:hover{
+			transform: scale(1.1);
 		}
 	}
 }
@@ -784,7 +815,7 @@ sup{
 	}
 	&__two{
 		position: absolute;
-		bottom: 91%;
+		bottom: 89%;
 		left: 66%;
 		width: 24.656%;
 		height: 14.585%;
@@ -792,7 +823,7 @@ sup{
 	}
 	&__tree{
 		position: absolute;
-		bottom: 90%;
+		bottom: 91%;
 		left: 7%;
 		width: 22.8%;
 		animation: animTwo 2s reverse infinite;
