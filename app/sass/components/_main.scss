@@ -12,6 +12,10 @@ body{
 	overflow-x: hidden;
 }
 
+.noscroll{
+	overflow: hidden;
+}
+
 .wrapper{
 	overflow: hidden;
 	min-height: 100vh;
@@ -50,6 +54,33 @@ a{
 	}
 	&__logo{
 		max-width: 16.93333333333333rem;
+	}
+}
+
+.menu-dropdown{
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	z-index: 90;
+	transition: .4s;
+	overflow-y: auto;
+	&.active{
+		top: 0;
+	}
+	&__body{
+		min-height: 100vh;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		padding-bottom: 80px;
+	}
+	&__links{
+		margin-top: -1.466666666666667rem;
+		max-width: 48.13333333333333rem;
+		width: 100%;
 	}
 }
 

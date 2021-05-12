@@ -1,5 +1,19 @@
 $(document).ready(function() {
 
+function setNoscroll(){
+	$('html').addClass('noscroll');
+}
+function unsetNoscroll(){
+	$('html').removeClass('noscroll');
+}
+
+$('.linkTo').on('click', function(){
+	var to = $(this).attr('href');
+	$('body, html').animate({
+		scrollTop: $(to).offset().top
+	}, 700);
+	return false;
+});
 
 $('.diamond-dec__mask').each(function() {
 	var src = $(this).data('src');
@@ -518,6 +532,19 @@ if ( $('.sec-infovideo').length ) {
 		});
 	}
 }
+
+
+$('.btn-menu').on('click', function(){
+	if ( $(this).hasClass('active') ) {
+		$(this).removeClass('active');
+		$('.menu-dropdown').removeClass('active');
+		unsetNoscroll();
+	}else{
+		$(this).addClass('active');
+		$('.menu-dropdown').addClass('active');
+		setNoscroll();
+	}
+});
 
 
 
