@@ -3912,7 +3912,7 @@ sup {
   .table-frol__title {
     color: #000000;
     letter-spacing: 0.01em;
-    font-size: 10.5333333333333333rem; }
+    font-size: 1.2rem; }
     .table-frol__title_bold {
       font-weight: 500; }
   .table-frol__tr .table-frol__cell:first-child {
@@ -3940,7 +3940,7 @@ sup {
     .table-frol__cell_bg {
       background: #F4F4F4; }
     .table-frol__cell-body {
-      min-height: 50.5333333333333333rem;
+      min-height: 5.533333rem;
       display: flex;
       align-items: center;
       padding: 17.5px 20px; }
